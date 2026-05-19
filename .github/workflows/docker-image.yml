@@ -25,9 +25,7 @@ jobs:
           push: true
           tags: hardingtrutran/gha-pyapp:${{ env.SHORT_SHA }}
       - name: install yq
-        run: |
-          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
-          sudo chmod +x /usr/local/bin/yq
+        uses: mikefarah/yq@v4.44.3
       - name: update deployment.yaml with docker tag
         run: |
           # Short commit hash
