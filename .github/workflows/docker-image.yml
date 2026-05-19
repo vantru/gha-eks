@@ -29,4 +29,4 @@ jobs:
           # Short commit hash
           SHORT_SHA=${GITHUB_SHA::7}
           # Update file yaml
-          yb -i '.spec.template.spec.containers[0].image = "hardingtrutran/pyapp:'"${SHORT_SHA}"'"' ./k8s/pyapp.yml
+          yq -i '.spec.template.spec.containers[0].image = "hardingtrutran/pyapp:'"${SHORT_SHA}"'"' ./k8s/pyapp.yml
