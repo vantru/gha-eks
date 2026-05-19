@@ -30,3 +30,10 @@ jobs:
           SHORT_SHA=${GITHUB_SHA::7}
           # Update file yaml
           yq -i '.spec.template.spec.containers[0].image = "hardingtrutran/pyapp:'"${SHORT_SHA}"'"' ./k8s/pyapp.yml
+      - name: commit deployment file change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions@noreply"
+          git add k8s/pyapp.yml
+          git commit -m "change tag sha"
+          git push main
