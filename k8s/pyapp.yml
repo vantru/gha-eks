@@ -15,7 +15,7 @@ spec:
         app: pyapp
     spec:
       containers:
-      - name: pyapp
-        image: hardingtrutran/pyapp:v3
-        ports:
-        - containerPort: 8000
+        - name: pyapp
+          image: hardingtrutran/pyapp:4594b12
+          ports:
+            - containerPort: 8000
