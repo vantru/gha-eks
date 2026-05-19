@@ -10,7 +10,7 @@ def create_app():
 
         return f"""
         <h3>argocd</h3>
-        <h1 style="color: black;">{message}</h1>
+        <h1 style="color: red;">{message}</h1>
         """
     return app
 app = create_app()
