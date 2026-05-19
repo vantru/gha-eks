@@ -20,3 +20,11 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD}}
       - name: push docker image to docker hub
         run: "docker push hardingtrutran/gha-pyapp:${GITHUB_SHA::7}"
+      - name: install yq
+        run: |
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+          sudo chmod +x /usr/local/bin/yq
+      - name: update deployment.yaml with docker tag
+        run: |
+          SHORT_SHA = ${GITHUB_SHA::7}
+          yb -i '.spec/.template/.spec/.containers[0]/image="hardingtrutran/pyapp:'"${SHORT_SHA}"'"' ./k8s/pyapp.yml
