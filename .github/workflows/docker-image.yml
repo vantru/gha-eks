@@ -36,4 +36,4 @@ jobs:
           git config user.email "github-actions@noreply"
           git add k8s/pyapp.yml
           git commit -m "change tag sha"
-          git push main
+          git push origin main
