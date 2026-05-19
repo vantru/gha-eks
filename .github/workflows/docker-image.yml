@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME}}
           password: ${{ secrets.DOCKER_PASSWORD}}
       - name: docker build and push image to Docker Hub
-        use: docker/build-push-action@v6
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
