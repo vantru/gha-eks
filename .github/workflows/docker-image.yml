@@ -32,7 +32,7 @@ jobs:
           exit-code: 1
       - name: notification to slack app
         if: always()
-        uses: hbfernandes/slack-action@2.1.1
+        uses: hbfernandes/slack-action@v2.1.1
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}   
         with:
