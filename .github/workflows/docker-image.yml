@@ -34,13 +34,13 @@ jobs:
         if: always()
         uses: slackapi/slack-github-action@v3
         with:
+          webhook: ${{ secrets.SLACK_TOKEN }}
           webhook-type: incoming-webhook
           payload: |
             {
+              channel: "gha-demo"
               text: "Docker scan completed."
             }
-        env: 
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKEN }}
       - name: docker push image to Docker Hub
         uses: docker/build-push-action@v6
         with:
