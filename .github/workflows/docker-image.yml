@@ -25,7 +25,7 @@ jobs:
           push: false
           tags: hardingtrutran/gha-pyapp:${{ env.SHORT_SHA }}
       - name: trivy image scans
-        uses: aquasecurity/trivy-action@0.24.0
+        uses: aquasecurity/trivy-action@<specific-safe-commit-sha>
         with:
           image-ref: hardingtrutran/gha-pyapp:${{ env.SHORT_SHA }}
           severity: critical, HIGH
