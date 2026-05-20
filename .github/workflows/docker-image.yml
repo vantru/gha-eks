@@ -38,7 +38,7 @@ jobs:
         with:
           args: |
             {
-              "channel": "development",
+              "channel": "gha-demo",
               "text": "testing slack messaging"
             }
       - name: docker push image to Docker Hub
