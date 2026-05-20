@@ -38,7 +38,7 @@ jobs:
           webhook-type: incoming-webhook
           payload: |
             {
-              "text": "Docker scan completed."
+              "text": "Docker scan completed. notify from github action"
             }
       - name: docker push image to Docker Hub
         uses: docker/build-push-action@v6
