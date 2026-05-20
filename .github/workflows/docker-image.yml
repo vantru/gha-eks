@@ -28,7 +28,7 @@ jobs:
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: hardingtrutran/gha-pyapp:${{ env.SHORT_SHA }}
-          severity: critical, HIGH
+          severity: critical,HIGH
           exit-code: 1
       - name: docker push image to Docker Hub
         uses: docker/build-push-action@v6
