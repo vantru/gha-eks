@@ -38,8 +38,8 @@ jobs:
           webhook-type: incoming-webhook
           payload: |
             {
-              channel: "gha-demo"
-              text: "Docker scan completed."
+              "channel": "#gha-demo",
+              "text": "Docker scan completed."
             }
       - name: docker push image to Docker Hub
         uses: docker/build-push-action@v6
